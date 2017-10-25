@@ -109,7 +109,6 @@ form label input:focus + span {
   top: 10px;
 }
 
-
 form input[type="submit"] {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
