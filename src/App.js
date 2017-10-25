@@ -6,10 +6,7 @@ class NameForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      userName: null,
-      email: null,
-      amount: null
-
+      userName: null, email: null, amount: null
     };
   }
 
