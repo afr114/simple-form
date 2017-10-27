@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      userName: null, email: null, amount: null
+      userName: null,
+      email: null,
+      amount: null
     };
   }
 
@@ -57,15 +58,6 @@ class NameForm extends React.Component {
     }
   }
 
-  validateEmail(evt) {
-    const re = /\S+@\S+\.\S+/;
-    if (evt.target.value && re.test(evt.target.value)) {
-      return true;
-    } else {
-      alert("Please input a valid email")
-    }
-  }
-
   validateAmount(event){
     if (event.target.value && event.target.value.match(/\d/) && !event.target.value.match(/[a-z]+/i)) {
       return true;
@@ -78,16 +70,12 @@ class NameForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <label>
-        <input placeholder="username" type="text" name="username" value={this.state.value} onChange={this.handleChange.bind(this)} onBlur={this.validateName.bind(this)}/>
-        <span>Username</span>
+          <input placeholder="username" type="text" name="username" value={this.state.value} onChange={this.handleChange.bind(this)} onBlur={this.validateName.bind(this)}/>
+          <span>Username</span>
         </label>
-         <label>
-         <input placeholder="email" type="email" name="email" value={this.state.value} onChange={this.handleChange.bind(this)} onBlur={this.validateEmail.bind(this)}/>
-         <span>Email</span>
-        </label>
-         <label>
-         <input placeholder="$0.00"type="text" name="amount" value={this.state.value} onChange={this.handleChange.bind(this)} onBlur={this.validateAmount.bind(this)}/>
-         <span>Amount</span>
+        <label>
+          <input placeholder="$0.00"type="text" name="amount" value={this.state.value} onChange={this.handleChange.bind(this)} onBlur={this.validateAmount.bind(this)}/>
+          <span>Amount</span>
         </label>
         <input type="submit" value="Submit" />
       </form>
