@@ -6,7 +6,6 @@ class NameForm extends React.Component {
     super(props);
     this.state = { 
       userName: null,
-      email: null,
       amount: null
     };
   }
@@ -14,8 +13,6 @@ class NameForm extends React.Component {
   handleChange(event) {
     if (event.target.name === "username") {
       this.setState({ userName: event.target.value});
-    } else if (event.target.name === "email") {
-      this.setState({ email: event.target.value});
     } else {
       this.setState({ amount: event.target.value});
     }
@@ -41,7 +38,7 @@ class NameForm extends React.Component {
     for(let prop in this.state) {
       if (!this.state[prop]) { return; }
     }
-    
+
     xhr.send(JSON.stringify(this.state));
   }
 
