@@ -4,10 +4,10 @@ import './App.css';
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       userName: null,
       amount: null
-    };
+    }
   }
 
   handleChange(event) {
